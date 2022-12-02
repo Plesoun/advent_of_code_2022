@@ -6,7 +6,6 @@ with open("input", "r") as f:
     for line in f.readlines():
         if '\n' == line:
             pack_number += 1
-            print("Pack number: {}, calories in the pack {}.".format(pack_number, pack_contents))
             most_calories.append(pack_contents)
             pack_contents = 0
             continue

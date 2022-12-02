@@ -14,6 +14,7 @@ matrix = {
     "C Z": 6,
 }
 
+
 def strategy_prediction(filename: str = None, strategy_list: list = None) -> int:
     score = 0
     if filename is not None:
