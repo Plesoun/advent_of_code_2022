@@ -9,12 +9,12 @@ L = logging.getLogger(__name__)
 class StrategyPredictionTestCase(unittest.TestCase):
     def setUp(self):
         with open("./test/test_input", "r") as f:
-            self.Problem = f.readlines()
-        print(self.Problem)
+            self.Strategy = f.readlines()
+        print(self.Strategy)
 
     def tearDown(self):
-        self.Problem = None
+        self.Strategy = None
 
 
     def test_strategy_prediction(self):
-        self.assertEqual(strategy_prediction(), 27)
+        self.assertEqual(strategy_prediction(strategy_list=self.Strategy), 27)
