@@ -10,5 +10,6 @@ class CampCleanupTestCase(unittest.TestCase):
 
     def test_range_comparison(self):
         self.assertTrue(range_comparison(range_1="1-5", range_2="3-4"))
+        self.assertTrue(range_comparison(range_1="63-64", range_2="13-64"))
         self.assertFalse(range_comparison(range_1="1-5", range_2="3-6"))
         self.assertFalse(range_comparison(range_1="1-5", range_2="6-8"))
