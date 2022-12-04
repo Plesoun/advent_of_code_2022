@@ -21,6 +21,6 @@ class BackpackPredictionTestCase(unittest.TestCase):
         self.assertEqual(calculate_priority({"a"}), 1)
         self.assertEqual(calculate_priority({"B"}), 28)
 
-    
+
     def test_find_triplets(self):
-        self.assertEqual(find_triplets_intersection(self.Backpacks), {"r"})
+        self.assertEqual(find_triplets_intersection(self.Backpacks), {"N"})
