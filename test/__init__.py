@@ -1,4 +1,4 @@
-from .day1 import StrategyPredictionTestCase
+from .day2 import StrategyPredictionTestCase
 
 __all__ = [
     "StrategyPredictionTestCase"
