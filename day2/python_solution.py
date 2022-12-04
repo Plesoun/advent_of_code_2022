@@ -41,6 +41,7 @@ def strategy_prediction(filename: str = None, strategy_list: list = None) -> int
         raise Exception("You need to specify filename, or provide a strategy_list.")
     return score
 
+
 def strategy_prediction_p2(filename: str = None, strategy_list: list = None) -> int:
     score = 0
     if filename is not None:
