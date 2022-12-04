@@ -1,6 +1,6 @@
 import unittest
 
-from day3.python_solution import split_compartment, find_intersection, calculate_priority
+from day3.python_solution import split_compartment, find_intersection, find_triplets_intersection, calculate_priority
 
 
 class BackpackPredictionTestCase(unittest.TestCase):
@@ -20,3 +20,7 @@ class BackpackPredictionTestCase(unittest.TestCase):
     def test_calculate_priority(self):
         self.assertEqual(calculate_priority({"a"}), 1)
         self.assertEqual(calculate_priority({"B"}), 28)
+
+    
+    def test_find_triplets(self):
+        self.assertEqual(find_triplets_intersection(self.Backpacks), {"r"})
