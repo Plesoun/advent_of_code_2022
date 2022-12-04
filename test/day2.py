@@ -5,7 +5,7 @@ from day2.python_solution import strategy_prediction, strategy_prediction_p2
 
 class StrategyPredictionTestCase(unittest.TestCase):
     def setUp(self):
-        with open("./test/test_input", "r") as f:
+        with open("./test/test_input_day2", "r") as f:
             self.Strategy = f.readlines()
 
     def tearDown(self):
