@@ -18,4 +18,5 @@ class BackpackPredictionTestCase(unittest.TestCase):
 
 
     def test_calculate_priority(self):
-        self.assertEqual(calculate_priority([("vvMQnwwvrwWNfr", "tZJfppmSfJSmSg"), ("BzGqjlBqBB", "mztHNFzDHg")]), 32)
+        self.assertEqual(calculate_priority({"a"}), 1)
+        self.assertEqual(calculate_priority({"B"}), 28)
