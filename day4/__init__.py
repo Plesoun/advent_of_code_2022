@@ -1,5 +1,5 @@
-from .python_solution import range_comparison
+from .python_solution import complete_overlap
 
 __all__ = [
-    "range_comparison",
+    "complete_overlap",
 ]
