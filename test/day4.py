@@ -4,9 +4,6 @@ from day4.python_solution import complete_overlap, partial_overlap
 
 
 class CampCleanupTestCase(unittest.TestCase):
-    def setUp(self):
-        with open("./test/test_input_day3", "r") as f:
-            self.Backpacks = f.readlines()
 
     def test_complete_overlap(self):
         self.assertTrue(complete_overlap(range_1="1-5", range_2="3-4"))
