@@ -15,13 +15,13 @@ class CraneRearrangeTestCase(unittest.TestCase):
         }
 
         self.Final = {
-            1: ["M"],
-            2: ["C"],
-            3: ["P", "Z", "N", "D"]
+            1: ["C"],
+            2: ["M"],
+            3: ["P", "D", "N", "Z"]
         }
 
     def test_crane_rearrange_step(self):
-        final = dict()
+        final = self.StartingPoint
         for move in self.Moves:
-            final = crane_rearrange_step(move, self.StartingPoint)
+            final = crane_rearrange_step(move, final)
         self.assertEqual(final, self.Final)
