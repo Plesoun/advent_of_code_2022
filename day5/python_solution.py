@@ -21,9 +21,11 @@ def crane_rearrange_bulk(move: str, starting_point: dict) -> dict:
     how_many = int(move_list[1])
     from_where = int(move_list[3])
     to_where = int(move_list[5].lstrip())
+    bulk = []
     for i in range(how_many):
         popped_thing = step[from_where].pop()
-        step[to_where].append(popped_thing)
+        bulk.append(popped_thing)
+    step[to_where].extend(list(reversed(bulk)))
     return step
 
 
@@ -40,9 +42,17 @@ if __name__ == "__main__":
             9: ["M", "S", "D", "J", "R", "Q", "H", "N"]
         }
     answer = []
+    # with open("./day5/input", "r") as f:
+    #     for move in f.readlines():
+    #         current_setup = crane_rearrange_step(move, current_setup)
+    #     for key, value in current_setup.items():
+    #         answer.append(value[-1:][0])
+    #     print("Aaaand the answer is: ", "".join(answer))
+
+    # Part II(bulk)
     with open("./day5/input", "r") as f:
         for move in f.readlines():
-            current_setup = crane_rearrange_step(move, current_setup)
+            current_setup = crane_rearrange_bulk(move, current_setup)
         for key, value in current_setup.items():
             answer.append(value[-1:][0])
         print("Aaaand the answer is: ", "".join(answer))
