@@ -5,7 +5,7 @@ from day7.python_solution import dir_enumerator, dir_sizer
 
 class OutOfSpaceTestCase(unittest.TestCase):
     def setUp(self):
-        with open("./test/test_input_day7", "r") as f:
+        with open("./test/test_input_day7_2", "r") as f:
             self.Input = f.readlines()
 
         self.StructureExample = {
@@ -26,7 +26,11 @@ class OutOfSpaceTestCase(unittest.TestCase):
                     "wrzcjwc",
                     "zlpmfh"
                 ],
-            "/fmfnpm_size": [194704, 48823, 224991, 79386]
+            "/fmfnpm_size": [48823, 194704, 224991, 79386],
+            "/fmfnpm/fgtqvq_size": [293783, 324635],
+            "/fmfnpm/rvnwwfq_size": [76914],
+            "/fmfnpm/wrzcjwc": ["fwdwq", "lddhdslh", "mjp", ],
+            "/fmfnpm/rvnwwfq_size": [196284, 284475, 2159],
         }
     
     
@@ -35,4 +39,4 @@ class OutOfSpaceTestCase(unittest.TestCase):
     
     
     def test_dir_sizer(self):
-        self.assertEqual(dir_sizer(self.StructureExample), 1491564)
+        self.assertEqual(dir_sizer(self.StructureExample, 100000), 48823)

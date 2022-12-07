@@ -40,16 +40,17 @@ def dir_enumerator(enumeration_input: list) -> dict:
     return representation
 
 
-def dir_sizer(representation: dict) -> int:
+def dir_sizer(representation: dict, size_threshold: int) -> int:
     size_sum = 0
     for key, value in representation.items():
         if "_size" in str(key):
-            print("uaaa")
-            size_sum += sum(value)
+            size_current = sum(value)
+            if size_current <= size_threshold:
+                size_sum += size_current
     return size_sum
 
 if __name__ == "__main__":
     with open("./day7/input", "r") as f:
         inputs = f.readlines()
         dirtree = dir_enumerator(inputs)
-        print("The combined size of the files in the system is: ", dir_sizer(dirtree))
+        print("The combined size of the files in the system is: ", dir_sizer(dirtree, 100000))
