@@ -1,5 +1,6 @@
-from .python_solution import dir_sizer
+from .python_solution import dir_sizer, dir_enumerator
 
 __all__ = [
-    "dir_sizer"
+    "dir_enumerator",
+    "dir_sizer",
 ]

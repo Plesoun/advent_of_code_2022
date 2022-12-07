@@ -3,6 +3,7 @@ from .day3 import BackpackPredictionTestCase
 from .day4 import CampCleanupTestCase
 from .day5 import CraneRearrangeTestCase
 from .day6 import SignalRecieverTestCase
+from .day7 import OutOfSpaceTestCase
 
 __all__ = [
     "StrategyPredictionTestCase",
@@ -10,4 +11,5 @@ __all__ = [
     "CampCleanupTestCase",
     "CraneRearrangeTestCase",
     "SignalRecieverTestCase",
+    "OutOfSpaceTestCase"
 ]
