@@ -19,7 +19,6 @@ decider_matrix = {
 """
 
 def dir_enumerator(enumeration_input: list) -> dict:
-    print("\n>>>>>>", enumeration_input)
     representation = {}
     _line = []
     current_directory = ""
@@ -28,14 +27,29 @@ def dir_enumerator(enumeration_input: list) -> dict:
         if _line[1] == "cd":
             current_directory = current_directory + _line[2].strip("\n")
             representation[current_directory] = []
+            representation[current_directory + "_size"] = []
         elif _line[1].rstrip() == "ls":
             continue
         elif _line[0] == "dir":
             representation[current_directory].append(_line[1].strip("\n"))
         else:
-            representation[current_directory.rstrip("/") + "/" + _line[1].rstrip("\n")] = int(_line[0])
+            # list that can be aggregated
+            representation[current_directory + "_size"].append(int(_line[0]))
+        # else:
+        #     representation[current_directory.rstrip("/") + "/" + _line[1].rstrip("\n")] = int(_line[0])
     return representation
 
 
 def dir_sizer(representation: dict) -> int:
-    pass
+    size_sum = 0
+    for key, value in representation.items():
+        if "_size" in str(key):
+            print("uaaa")
+            size_sum += sum(value)
+    return size_sum
+
+if __name__ == "__main__":
+    with open("./day7/input", "r") as f:
+        inputs = f.readlines()
+        dirtree = dir_enumerator(inputs)
+        print("The combined size of the files in the system is: ", dir_sizer(dirtree))

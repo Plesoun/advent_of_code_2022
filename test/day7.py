@@ -19,20 +19,14 @@ class OutOfSpaceTestCase(unittest.TestCase):
                     "wchdqb",
                     "zlpmfh"
                 ],
-            "/btm": 282959,
-            "/hmbbjbf": 275929,
-            "/rhpwvff": 193293,
-            "/zlpmfh.gpt": 191479,
+            "/_size": [282959, 275929, 193293, 191479],
             "/fmfnpm": [
                     "fgtqvq",
                     "rvnwwfq",
                     "wrzcjwc",
                     "zlpmfh"
                 ],
-            "/fmfnpm/fwdvgnqp.fsm": 194704,
-            "/fmfnpm/fwdwq.tsq": 48823,
-            "/fmfnpm/mtjngt": 224991,
-            "/fmfnpm/rdsgpfjb.sfn": 79386,
+            "/fmfnpm_size": [194704, 48823, 224991, 79386]
         }
     
     
@@ -41,4 +35,4 @@ class OutOfSpaceTestCase(unittest.TestCase):
     
     
     def test_dir_sizer(self):
-        pass
+        self.assertEqual(dir_sizer(self.StructureExample), 1491564)
